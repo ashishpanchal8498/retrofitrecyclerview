@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">ViewPager</string>
+        <string name="backarrowimage">backarrowimage</string>
+        <string name="toolbarLayout">toolbarLayout</string>
+        <!-- TODO: Remove or change this placeholder text -->
+        <string name="hello_blank_fragment">Hello blank fragment</string>
+        <string name="tablayout">tablayout</string>
+        <string name="searchimage">searchimage</string>
+        <string name="search">Search</string>
+        <string name="text">Text</string>
+        <string name="recent">Recent</string>
+        <string name="groups">Groups</string>
+        <string name="friends">Friends</string>
+        <string name="btnHome">btnHome</string>
+        <string name="btnFriends">btnFriends</string>
+        <string name="btnCreate">btnCreate</string>
+        <string name="btnChat">btnChat</string>
+        <string name="btnCall">btnCall</string>
+        <string name="buttonhome">buttonhome</string>
+        <string name="buttonfriends">buttonfriends</string>
+        <string name="buttoncreate">buttoncreate</string>
+        <string name="buttonchat">buttonchat</string>
+        <string name="buttoncall">buttoncall</string>
+
+    </resources>
