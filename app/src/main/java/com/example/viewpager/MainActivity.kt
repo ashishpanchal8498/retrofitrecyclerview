@@ -5,6 +5,9 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -14,6 +17,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MainActivity : AppCompatActivity() {
 
     private var baseurl = "https://api.github.com"
+
+    private val tabTitle = arrayOf("Friends", "Groups")
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: RecyclerAdapter
@@ -26,12 +31,18 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerView)
 
-        getAllData()
-
         adapter = RecyclerAdapter(this, data)
 
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.adapter = adapter
+        getAllData()
+
+        val pager = findViewById<ViewPager2>(R.id.viewPager)
+        val tabular = findViewById<TabLayout>(R.id.tabLayout)
+        pager.adapter = TabAdapter(supportFragmentManager, lifecycle)
+        TabLayoutMediator(tabular, pager) { tab, position ->
+            tab.text = tabTitle[position]
+        }.attach()
     }
 
     private fun getAllData() {

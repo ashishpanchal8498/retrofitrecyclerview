@@ -14,14 +14,13 @@
         android:background="#191D26"
         android:contentDescription="@string/toolbarLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:background="@null"
             android:gravity="center_vertical"
             android:hint="@string/search"
@@ -33,27 +32,31 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="1dp"
+        android:background="@color/blue"
         android:contentDescription="@string/tablayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarLayout"
-        tools:ignore="VisualLintBounds">
+        app:layout_constraintTop_toBottomOf="@id/toolbarLayout"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextAppearance="@style/MyCustomTextAppearance"
+        app:tabTextColor="@color/purple_200">
 
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:gravity="center_vertical"
-            android:hint="@string/friends"
-            android:importantForAutofill="no"
-            android:textColorHint="#2AD4DF"
-            android:textSize="16sp" />
+    </com.google.android.material.tabs.TabLayout>
 
-    </androidx.appcompat.widget.Toolbar>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="620dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -64,3 +67,25 @@
         app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--    <androidx.appcompat.widget.Toolbar-->
+    <!--        android:id="@+id/tabLayout"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="48dp"-->
+    <!--        android:contentDescription="@string/tablayout"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.536"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/toolbarLayout"-->
+    <!--        tools:ignore="VisualLintBounds">-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="100dp"-->
+    <!--            android:layout_height="50dp"-->
+    <!--            android:gravity="center_vertical"-->
+    <!--            android:hint="@string/friends"-->
+    <!--            android:importantForAutofill="no"-->
+    <!--            android:textColorHint="#2AD4DF"-->
+    <!--            android:textSize="16sp" />-->
+    <!--    </androidx.appcompat.widget.Toolbar>-->
