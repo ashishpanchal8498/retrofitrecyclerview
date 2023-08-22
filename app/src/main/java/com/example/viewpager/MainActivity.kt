@@ -1,5 +1,4 @@
 package com.example.viewpager
-
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
@@ -8,7 +7,9 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
 
-    private var baseurl = "https://api.github.com"
+    companion object{
+        const val baseurl = "https://api.github.com"
+    }
 
     private val tabTitle = arrayOf("Friends", "Groups")
 
@@ -22,5 +23,9 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(tabular, pager) { tab, position ->
             tab.text = tabTitle[position]
         }.attach()
+    }
+    private fun exampleFunction() {
+        val apiUrl = "$baseurl/https://api.github.com"
+        // Rest of your code...
     }
 }

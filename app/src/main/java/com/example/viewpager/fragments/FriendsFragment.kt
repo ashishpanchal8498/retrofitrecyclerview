@@ -8,10 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.viewpager.ApiInterface
-import com.example.viewpager.R
-import com.example.viewpager.RecyclerAdapter
-import com.example.viewpager.UsersItem
+import com.example.viewpager.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,7 +17,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class FriendsFragment : Fragment() {
 
-    private var baseurl = "https://api.github.com"
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: RecyclerAdapter
     private var data: List<UsersItem> = emptyList()
@@ -40,10 +36,9 @@ class FriendsFragment : Fragment() {
         return view
     }
 
-
     private fun getAllData() {
         val retrofit =
-            Retrofit.Builder().baseUrl(baseurl).addConverterFactory(GsonConverterFactory.create())
+            Retrofit.Builder().baseUrl(MainActivity.baseurl).addConverterFactory(GsonConverterFactory.create())
                 .build().create(ApiInterface::class.java)
 
         val retroData = retrofit.getData()
